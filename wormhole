@@ -1,0 +1,25 @@
+# Modified for convenience by Pär Strindevall. Original shell script by Jeroen Janssens.
+
+export MARKPATH=$HOME/.marks
+function whole {
+if [ "$2" == "" -a "$1" != "-l" -a "$1" != "" -a "$1" != "-a" -a "$1" != "-r" -a "$1" != "-l" -a "$1" != "-h" ]
+then
+	cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such wormhole: $1"
+elif [ "$1" == "-a" -a "$2" != "" ]
+then
+	mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$2"
+elif [ "$1" == "-r" -a "$2" != "" ]
+then
+	rm -i "$MARKPATH/$2"
+elif [ "$1" == "-l" ]
+then
+	if [ `uname` == "Darwin" ]
+	then #Mark list for OS X
+		\ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+	else #Mark list for all else
+    	ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+	fi
+else
+	printf " whole <name> ::> Jump through wormhole \n whole -a <name> ::> Add working directory to wormholes \n whole -r <name> ::> Remove <name> from wormholes \n whole -l ::> Lists all current wormholes \n whole -h ::> Display this message \n"
+fi
+}
