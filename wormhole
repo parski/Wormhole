@@ -1,5 +1,3 @@
-# Modified for convenience by Pär Strindevall. Original shell script by Jeroen Janssens.
-
 export MARKPATH=$HOME/.marks
 function whole {
 if [ "$2" == "" -a "$1" != "-l" -a "$1" != "" -a "$1" != "-a" -a "$1" != "-r" -a "$1" != "-l" -a "$1" != "-h" ]
