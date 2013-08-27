@@ -3,6 +3,10 @@ Wormhole
 
 Unix file system shortcut utility based on [a blog post](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html) by Jeroen Janssens. His shell shortcut functions are practical but I vastly prefer one command with different flags as opposed to different commands for the same utility. Because of this I put together Wormhole.
 
+Wormhole lets you create shortcuts in your file tree to quickly navigate from one remote directory to another.
+
+![screenshot](http://cl.ly/image/2m2x1y1f1y0w/Screen%20Shot%202013-08-27%20at%204.22.56%20PM.png)
+
 Commands
 ---------------------
 
@@ -27,3 +31,8 @@ Installation on OS X:
 6. Refresh your bash configuration: `. .bash_profile`
 
 That would be the *whole* shebang.
+
+License
+---------------------
+
+Wormhole is licensed under [COPYPASTE](http://cp.kuri.mu/).
