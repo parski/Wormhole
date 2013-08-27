@@ -32,7 +32,7 @@ Installation on OS X:
 
 That would be the *whole* shebang.
 
-License
+Legal
 ---------------------
 
 Wormhole is licensed under [COPYPASTE](http://cp.kuri.mu/).
